@@ -1,0 +1,51 @@
+<div class="content">
+	<div class="join">
+		<div class="header-title">
+			<%= image_tag "logo-top.png" %>
+		</div>
+		<form class="form-panel clearfix">
+			<h1 class="main-title">Better Drivers Seminar</h1>
+			<div class="title-menu">
+				<div class="left-panel box-panel">
+					<h2>REGISTER</h2>
+				</div>
+				<div class="right-panel box-panel">
+					<h2>I WOULD LIKE TO ENROLL IN</h2>
+				</div>
+			</div>
+			<div class="left-panel box-panel">
+				<div class="main-form"> 
+					<div class="form-group">
+						<div class="form-block">
+							<%= label_tag :full_name, 'Full Name' %> 
+							<%= text_field_tag :full_name, nil, placeholder: 'Full Name' %>
+							<div class="error error_full_name"></div>
+						</div>
+						<div class="form-block">
+							<%= label_tag :email, 'Email Address' %>
+							<%= text_field_tag :email, nil, placeholder: 'Email Address' %>
+							<div class="error error_email"></div>
+						</div>
+						<div class="form-block">
+							<%= label_tag :mobile, "Mobile Number" %>
+							<%= text_field_tag :mobile, nil, placeholder: 'Mobile Number' %>
+							<div class="error error_mobile"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="right-panel box-panel">
+				<div id="selection-course">
+					<div class="selection-title-holder">
+						<button type="button" class="select-course-btn" data-reveal-id="selection-course-modal">SELECT COURSE</button>
+						<div class="error error_event_id"></div>
+					</div>
+				</div>
+				<div class="bottom-holder">
+					<button type="button" class="join-btn">JOIN</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<%= render :partial => 'done' %>

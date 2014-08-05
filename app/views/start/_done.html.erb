@@ -1,0 +1,26 @@
+<script type="text/template" id="done-registration" data-turbolinks-eval="false">
+<div class="done">
+	<div class="header-title">
+		<h2>Thank you for registering!</h2>
+	</div>
+	<div class="event">
+		<p id="name"></p>
+		<p id="date"></p>
+	</div>
+	<div class="greetings">
+		<p>See you there!</p>
+		<small>*Please bring an ID.</small>
+	</div>
+	<div class="bottom-logo">
+		<%= image_tag "logo-bottom.png" %>
+	</div> 
+	<div class="bg">
+		<%= image_tag "bg.png" %>
+	</div>
+	<div class="facebook-sharer">
+		<a href="#" class="fb-share-button" data-href="<%= request.protocol + request.host %>">
+			<%= image_tag "sharer.png" %>
+		</a>
+	</div>
+</div>
+</script>

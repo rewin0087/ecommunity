@@ -1,0 +1,1 @@
+class Ecommunity.Models.Participant extends Backbone.Model

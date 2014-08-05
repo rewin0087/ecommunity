@@ -1,0 +1,85 @@
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+ 
+.clearfix {
+    display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+    display: block;
+}
+ 
+* html .clearfix {
+    height: 1%;
+}
+
+@for $i from 1 through 10 {
+
+	.mTop#{$i * 5} {
+		margin-top: $i*5px !important;
+	}
+
+	.mLeft#{$i * 5} {
+		margin-left: $i*5px !important;
+	}
+
+	.mRight#{$i * 5} {
+		margin-right: $i*5px !important;
+	}
+
+	.mBottom#{$i * 5} {
+		margin-bottom: $i*5px !important;
+	}
+}
+
+table {
+	width: 100%;
+}
+
+.loader {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: rgba(255, 255, 255, 0.8);
+	z-index: 999;
+
+	.ui-content {
+		width: 200px;
+		margin: auto;
+		position: fixed;
+		bottom: 5%;
+		right: 4%;
+		background: #fff;
+		border-radius: 10px;
+		padding: 5px;
+		border: 1px solid #ddd;
+		text-align: center;
+
+	}
+}
+
+
+.error {
+	background: #f2dede;
+	display: none;
+	border: 1px solid #ebccd1;
+	color: #a94442;
+	margin: -5px 0 15px; 
+	padding: 10px 5px;
+	font-weight: bold; 
+
+}
+
+.show-error {
+	display: block !important;
+}

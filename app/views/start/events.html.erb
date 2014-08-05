@@ -1,0 +1,44 @@
+<div class="events">
+	<%= render :partial => 'menu' %>
+	<div class="row mTop30">
+		<div class="columns small-12">
+			<div class="panel radius">
+				<div class="panel-header">
+					<h3>Events</h3>
+				</div>
+				<div class="panel-body"></div>
+				<div class="panel-footer">
+					<div class="row">
+						<a href="#" class="button radius small show-add-modal" data-reveal-id="add-event">Add</a>
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="add-event" class="reveal-modal medium" data-reveal="">
+	<form>
+		<div class="row">
+			<div class="columns large-12">
+				<label for="name">Name</label>
+				<input id="name" name="name" placeholder="Name" type="text">
+				<div class="error error_name"></div>
+			</div>
+			<div class="columns large-12">
+				<label for="venue">Venue</label>
+				<input id="venue" name="venue" placeholder="Venue" type="text">
+				<div class="error error_venue"></div>
+			</div>
+			<div class="columns large-12">
+				<label for="date_time">Date Time (e.g August 10, 2014 03:00 PM)</label>
+				<input data-date-format="MM dd, yyyy HH:mm P" id="date_time" name="date_time" placeholder="Date Time" type="text">
+				<div class="error error_date_time "></div>
+			</div>
+			<div class="columns large-12">
+				<button type="button" class="button radius small save">Save</button>
+			</div>
+		</div>
+	</form>
+	<a class="close-reveal-modal">×</a>
+</div>

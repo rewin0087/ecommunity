@@ -1,0 +1,232 @@
+// Place all the styles related to the start controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$green: #76943c;
+$white: #ffffff;
+
+.done_text {
+		color: #5a5a5a;
+		font-size: 36px;
+		margin: 0;
+		line-height: 45px;
+}
+
+body {
+	height: auto !important;
+}
+
+.facebook-sharer {
+	text-align: center;
+	margin: 35px auto 30px;
+}
+
+.content {
+	width: 810px;
+	margin: 30px auto 30px;
+	font-family: sans-serif !important;
+	position: relative;
+
+	.join {
+		.header-title {
+				text-align: center;
+		}
+
+		h2 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		button:hover, button:focus {
+				background: $green !important;
+		}
+
+		.form-panel {
+			width: 800px;
+			margin: 30px auto 0; 
+			display: block;
+
+			.box-panel {
+				float: left;
+			}
+
+			.main-title {
+				text-align: center;
+				font-weight: bold;
+				font-family: sans-serif;
+				font-size: 41px;
+				border-bottom: 2px solid $green;
+				margin-bottom: 15px;
+			}
+
+			.title-menu {
+				margin-bottom: 10px;
+			}
+
+			.left-panel {
+				width: 380px;
+				margin-right: 25px;
+
+				.main-form {
+					background: $green;
+					color: $white;
+					padding: 10px;
+ 
+					.form-group {
+						margin: 50px auto 0;
+						min-height: 380px;
+						width: 335px;
+
+						.form-block {
+							margin-left: 10px;
+
+							label {
+								color: $white;
+								display: block;
+								font-weight: bold;
+								margin: 15px 0 5px;
+							}
+
+							input {
+								display: block;
+								width: 310px;
+								font-size: 18px;
+								padding: 5px;
+							}
+						}
+					}
+				}
+			}
+
+			.right-panel {
+				width: 390px;
+				position: relative;
+
+				.selection-title-holder {
+					margin: 50px 0 0;
+					text-align: center;
+
+					h2 {
+						color: $green;
+					}
+				}
+
+				#selection-course {
+					background: #a6b980;
+					border: 2px solid $green;
+					min-height: 465px;
+					position: relative;
+				}
+
+				.select-course-btn {
+					background: $green;
+					color: $white;
+					border: 0;
+					padding: 15px;
+					width: 340px;
+					font-size: 21px;
+					font-weight: bold;
+				}
+
+				.bottom-holder {
+					margin-top: 10px;
+					text-align: right;
+
+					.join-btn { 
+						background: $green;
+						color: $white;
+						border: 0;
+						padding: 4px 25px;
+						font-size: 19px;
+						font-weight: bold;
+					}
+				}
+
+				.error {
+					margin: auto;
+				}
+			}
+		}
+
+		.error {
+			width: 310px;
+		}
+	}
+
+	.done {
+		width: 780px;
+		margin: 50px auto 0;
+		text-align: center;
+
+		.header-title {
+
+			h2 {
+				color: $green;
+				font-weight: bold;
+				font-family: sans-serif;
+				font-size: 45px;
+			}
+		}
+
+		.event {
+
+			p {
+					@extend .done_text;
+			}
+
+		}
+
+		.greetings {
+			
+			margin: 50px 0;
+
+			p {
+					@extend .done_text;
+					margin: 10px 0 50px;
+			}
+
+			small {
+				font-size: 14px;
+			}
+		}
+
+		.bg {
+			img {
+				position: absolute;
+				z-index: -1;
+				bottom: 0;
+				left: 0;
+				right: 0; 
+			}
+		}
+	}
+ 
+}
+
+.selections {
+	padding: 10px 25px;
+
+	.course {
+		background: #76943c;
+		padding: 0px;
+		margin-bottom: 5px;
+
+		.select {
+			text-align: center;
+
+			h4 {
+				color: #fff;
+				margin: 0;
+				font-size: 20px;
+				padding: 0;
+				font-weight: bold;
+			}
+
+			p {
+				color: #fff;
+				font-family: inherit;
+				margin-bottom: 5px;
+			}
+		}
+	}
+}
