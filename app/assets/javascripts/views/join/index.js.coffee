@@ -11,6 +11,7 @@ class Ecommunity.Views.Join_Index extends Backbone.View
 	showSelectCourseModal: () =>
 		# get target DOM
 		targetDOM = $('#selection-course')
+		
 		# initialize modal
 		modal = new Ecommunity.Views.Select_Course_View({ collection: @collection })
 		modal.parent = @

@@ -18,4 +18,3 @@ class Ecommunity.Views.Select_Course_View extends Backbone.View
 		rowView.parent = @parent
 
 		@$el.find('.selections').append(rowView.render().el)
-

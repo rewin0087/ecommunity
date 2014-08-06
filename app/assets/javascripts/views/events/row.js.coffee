@@ -2,6 +2,9 @@ class Ecommunity.Views.Events_Row extends Backbone.View
 	template: JST['events/row']
 	tagName: 'tr'
 
+	initialize: () =>
+		 @model.on 'destroy', @unRender, @
+
 	events: () ->
 		{
 			'click .destroy' : 'destroy'
@@ -26,10 +29,11 @@ class Ecommunity.Views.Events_Row extends Backbone.View
 	success: () =>
 
 		_h.loader false
-
-		@remove
-
 		@
+
+	unRender: () =>
+		# remove from html this current record
+        @remove()
 
 	error: () =>
 		

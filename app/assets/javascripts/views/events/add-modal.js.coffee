@@ -1,5 +1,6 @@
 class Ecommunity.Views.Events_Add_Modal extends Backbone.View
 	el: '#add-event'
+	counter: 0
 
 	events: () ->
 		{
@@ -19,8 +20,9 @@ class Ecommunity.Views.Events_Add_Modal extends Backbone.View
 
 		@ 
 
-	save: () =>
-		console.log 'save'
+	save: (e) =>
+		e.preventDefault()
+
 		@clearErrors()
 		# get form
 		form = @$el.find('form')
@@ -29,15 +31,18 @@ class Ecommunity.Views.Events_Add_Modal extends Backbone.View
 		# show loader
 		_h.loader true
 
-		@collection.create(
-			data,
+		if @counter < 1
+			@collection.create(
+				data,
 
-			{ wait: true, success: @success, error: @error }
-		)
+				{ wait: true, success: @success, error: @error }
+			)
 
 		@
 
 	success: () =>
+		
+		@counter++
 
 		$('.dataTables_empty').remove()
 		# hide loader
@@ -46,6 +51,8 @@ class Ecommunity.Views.Events_Add_Modal extends Backbone.View
 		$('#add-event').foundation('reveal', 'close')
 
 		form = @$el.find('form')[0].reset()
+		
+		@undelegateEvents()
 
 		@
 

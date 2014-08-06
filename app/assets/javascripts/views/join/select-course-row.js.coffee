@@ -8,14 +8,14 @@ class Ecommunity.Views.Select_Course_Row extends Backbone.View
 		}
 
 	selected: (e) =>
-		e.preventDefault()
-		$('.course').removeAttr('style')
+		e.preventDefault() 
+		$('.course').removeClass('course-selected')
 
 		# set event id to selected_event
 		@parent.selected_event = @model.get('id')
 
 		setTimeout () =>
-			@$el.find('.course').css({ background: '#86AB3F'})
+			@$el.find('.course').addClass('course-selected')
 		, 100
 
 		@

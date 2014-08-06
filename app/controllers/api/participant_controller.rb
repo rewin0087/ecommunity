@@ -18,7 +18,7 @@ module Api
 				# save
 				participant.save()
 				# return record
-				render :json => Event.find(participant.event_id)
+				render :json => Participant.includes(:event).find(participant.id).as_json(include: :event)
 			else
 				# return error
 				render :json => { error: participant.errors }, :status => 503

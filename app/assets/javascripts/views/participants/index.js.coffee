@@ -13,7 +13,7 @@ class Ecommunity.Views.Participants_Index extends Backbone.View
 		if !oTable
 			oTable = $('#participant-table').dataTable
 				'info' : false
-				'iDisplayLength' : 5
+				'iDisplayLength' : 30
 				'bDestroy' : true
 
 		@

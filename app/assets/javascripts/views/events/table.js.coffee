@@ -1,12 +1,17 @@
 class Ecommunity.Views.Event_Table extends Backbone.View
 	template: JST['events/table']
 
+	initialize: () ->
+		@collection.on 'add', @addOne, @
+
 	render: () =>
 
 		@$el.html @template()
 
+		@$el.find('tbody').html ''
+		
 		@collection.each(@addOne, @)
-
+		
 		@
 
 	addOne: (model) =>

@@ -18,22 +18,23 @@ body {
 
 .facebook-sharer {
 	text-align: center;
-	margin: 35px auto 30px;
+	margin: 25px auto 10px;
 }
 
 .content {
-	width: 810px;
-	margin: 30px auto 30px;
+	width: 790px;
+	margin: 0px auto;
 	font-family: sans-serif !important;
 	position: relative;
+	overflow: hidden;
 
 	.join {
 		.header-title {
-				text-align: center;
+			text-align: center;
 		}
 
 		h2 {
-			font-size: 24px;
+			font-size: 18px;
 			font-weight: bold;
 		}
 
@@ -42,7 +43,7 @@ body {
 		}
 
 		.form-panel {
-			width: 800px;
+			width: 790px;
 			margin: 30px auto 0; 
 			display: block;
 
@@ -54,7 +55,7 @@ body {
 				text-align: center;
 				font-weight: bold;
 				font-family: sans-serif;
-				font-size: 41px;
+				font-size: 30px;
 				border-bottom: 2px solid $green;
 				margin-bottom: 15px;
 			}
@@ -64,8 +65,8 @@ body {
 			}
 
 			.left-panel {
-				width: 380px;
-				margin-right: 25px;
+				width: 370px;
+				margin-right: 20px;
 
 				.main-form {
 					background: $green;
@@ -74,7 +75,7 @@ body {
  
 					.form-group {
 						margin: 50px auto 0;
-						min-height: 380px;
+						min-height: 345px;
 						width: 335px;
 
 						.form-block {
@@ -99,7 +100,7 @@ body {
 			}
 
 			.right-panel {
-				width: 390px;
+				width: 380px;
 				position: relative;
 
 				.selection-title-holder {
@@ -114,7 +115,7 @@ body {
 				#selection-course {
 					background: #a6b980;
 					border: 2px solid $green;
-					min-height: 465px;
+					min-height: 430px;
 					position: relative;
 				}
 
@@ -155,7 +156,7 @@ body {
 
 	.done {
 		width: 780px;
-		margin: 50px auto 0;
+		margin: 60px auto 0;
 		text-align: center;
 
 		.header-title {
@@ -178,11 +179,11 @@ body {
 
 		.greetings {
 			
-			margin: 50px 0;
+			margin: 30px 0;
 
 			p {
 					@extend .done_text;
-					margin: 10px 0 50px;
+					margin: 10px 0 30px;
 			}
 
 			small {
@@ -204,12 +205,13 @@ body {
 }
 
 .selections {
-	padding: 10px 25px;
+	padding: 5px 15px;
 
 	.course {
 		background: #76943c;
 		padding: 0px;
-		margin-bottom: 5px;
+		margin-bottom: 3px;
+		border: 3px solid #76943c;
 
 		.select {
 			text-align: center;
@@ -217,7 +219,7 @@ body {
 			h4 {
 				color: #fff;
 				margin: 0;
-				font-size: 20px;
+				font-size: 14px;
 				padding: 0;
 				font-weight: bold;
 			}
@@ -225,8 +227,18 @@ body {
 			p {
 				color: #fff;
 				font-family: inherit;
-				margin-bottom: 5px;
+				font-size: 12px;
+				margin-bottom: 0px;
 			}
+		}
+	}
+
+	.course-selected {
+		background: #fff;
+		border: 3px solid #76943c;
+
+		p, h4 {
+			color: #333 !important;
 		}
 	}
 }
