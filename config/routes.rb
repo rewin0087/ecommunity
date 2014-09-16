@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   root 'start#index'
 
   namespace :api do
-    resources :participant, :only => [:create, :index]
-    resources :event, :only => [:create, :update, :destroy, :index]
+    resources :participants, :only => [:create, :index]
+    resources :events, :only => [:create, :update, :destroy, :index]
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -11,7 +11,7 @@ end
 gem 'foundation-datetimepicker-rails'
 
 # datatables
-gem 'jquery-datatables-rails', '~> 2.1.10.0.4'
+gem 'jquery-datatables-rails', '~> 2.2.1'
 # foundation zurb
 gem 'foundation-rails'
 # underscorejs

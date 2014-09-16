@@ -36164,9 +36164,9 @@ if ( $.fn.DataTable.TableTools ) {
 }).call(this);
 (function() { this.JST || (this.JST = {}); this.JST["join/select-course"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<div>\r\n\t<div class="selections"></div>\r\n</div>\n');}return __p.join('');};
 }).call(this);
-(function() { this.JST || (this.JST = {}); this.JST["participants/row"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<td> ',  id ,' </td>\r\n<td> ',  full_name ,' </td>\r\n<td> ',  email ,' </td>\r\n<td> ',  mobile ,' </td>\r\n<td> ',  event.name ,' </td>\n');}return __p.join('');};
+(function() { this.JST || (this.JST = {}); this.JST["participants/row"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<td> ',  id ,' </td>\r\n<td> ',  full_name ,' </td>\r\n<td> ',  email ,' </td>\r\n<td> ',  mobile ,' </td>\r\n<td> ',  event.name ,' </td>\r\n<td> ',  event.date_time ,' </td>\n');}return __p.join('');};
 }).call(this);
-(function() { this.JST || (this.JST = {}); this.JST["participants/table"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<table id="participant-table">\r\n  <thead>\r\n    <tr>\r\n      <th width="100">ID</th>\r\n      <th>Name</th>\r\n      <th>Email</th>\r\n      <th>Mobile</th>\r\n      <th>Course Selected</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody></tbody>\r\n</table>\n');}return __p.join('');};
+(function() { this.JST || (this.JST = {}); this.JST["participants/table"] = function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<table id="participant-table">\r\n  <thead>\r\n    <tr>\r\n      <th width="100">ID</th>\r\n      <th>Name</th>\r\n      <th>Email</th>\r\n      <th>Mobile</th>\r\n      <th>Event Selected</th>\r\n      <th>Event Date</th>\r\n    </tr>\r\n  </thead>\r\n  <tbody></tbody>\r\n</table> \n');}return __p.join('');};
 }).call(this);
 (function() {
   var __hasProp = {}.hasOwnProperty,
@@ -36304,6 +36304,7 @@ if ( $.fn.DataTable.TableTools ) {
       _h.loader(false);
       $('#add-event').foundation('reveal', 'close');
       form = this.$el.find('form')[0].reset();
+      this.undelegateEvents();
       return this;
     };
 
@@ -36514,16 +36515,17 @@ if ( $.fn.DataTable.TableTools ) {
       var template;
       template = _.template($(this.template).html());
       this.$el.html(template());
-      this.$el.find('#name').html(this.model.get('name'));
-      this.$el.find('#date').html(this.model.get('date_time'));
+      this.$el.find('#name').html(this.model.get('event').name);
+      this.$el.find('#date').html(this.model.get('event').date_time);
       return this;
     };
 
     Done_Registration.prototype.share = function(e) {
       var fb_button, fb_link;
+      console.log(this.model);
       e.preventDefault();
       fb_button = this.$el.find('.fb-share-button');
-      fb_link = fb_button.attr('data-href') + '/' + this.model.get('name') + '/' + this.model.get('id') + '/registered';
+      fb_link = fb_button.attr('data-href') + '/' + this.model.get('full_name') + '/' + this.model.get('id') + '/registered';
       return window.open('https://www.facebook.com/sharer/sharer.php?u=' + fb_link, '_blank', 'width=600px, height=170px, resizable=0, menubar=0, titlebar=0, toolbar=0, left=300, top=100');
     };
 
@@ -36755,8 +36757,7 @@ if ( $.fn.DataTable.TableTools ) {
         model: model
       });
       rowView.parent = this.parent;
-      this.$el.find('.selections').append(rowView.render().el);
-      return console.log(rowView.render().el);
+      return this.$el.find('.selections').append(rowView.render().el);
     };
 
     return Select_Course_View;

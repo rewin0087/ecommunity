@@ -39,7 +39,7 @@ class Ecommunity.Views.Join_Index extends Backbone.View
 		# initialize model
 		model = new Ecommunity.Models.Participant(data)
 		# set url
-		model.urlRoot = '/api/participant'
+		model.urlRoot = '/api/participants'
 		# set selected event
 		model.set('event_id', @selected_event)
 		# save
